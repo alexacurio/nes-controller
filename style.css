@@ -1,0 +1,787 @@
+:root{
+  --gris-claro: #F9F9F9;
+  --gris-neutro: #e4e4e4;
+  --gris-opaco: #AEADB3;
+  --gris-oscuroSuave: #505050;
+  --gris-oscuroFuerte: #272727;
+  --gris-bar: #979893;
+  --red-color:#C04B42;
+  --red-lightColor: #FF8B80;
+  --red-darkColor: #AB2522;
+  --white-redColor:#f6dbdb;
+  --white-color: #DAD9DF;
+  --whiteGray-color: #C6C5CB;
+
+  --grad-bg: linear-gradient(var(--gris-neutro), var(--gris-opaco));
+
+  --grad-panel: linear-gradient(135deg, var(--gris-oscuroSuave), var(--gris-oscuroFuerte));
+
+  --grad-buttons: linear-gradient(135deg, var(--white-color), var(--whiteGray-color));
+
+  --placeButtons-Size:28px;
+
+}
+
+body{
+  margin: 0;
+  background: radial-gradient(#ff3848, #e60012 );
+  display: flex;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.cont-global{
+  margin: auto;
+  perspective: 1000px;
+  position: relative;
+}
+
+.background-banner{
+  position: absolute;
+  display: block;
+  text-align: center;
+  left:-90%;
+  top: -10%;
+  outline: 30px solid var(--white-redColor);
+  border-radius: 200px;
+  padding: 0 20%;
+  opacity: 0.3;
+}
+.background-banner::before{
+  content: "Nintendo";
+  position: relative;
+  color: var(--white-redColor);
+  letter-spacing: 1px;
+  font-weight: 800;
+  font-size: 12em;
+}
+
+
+.tagline{
+  width: 100%;
+  bottom: 2px;
+  color: var(--white-redColor);
+  letter-spacing: 4px;
+  position: absolute;
+  text-align: center;
+  font-size: 0.6em;
+}
+
+.cubo{
+  width: 400px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translate3D(0px,-10px,180px) rotateX(25deg) rotateY(30deg);
+  animation: Breathing 2s infinite alternate linear;
+}
+
+@keyframes Breathing{
+  from{
+    transform: translate3D(0px,-10px,178px) rotateX(25deg) rotateY(30deg);
+  }
+  to{
+    transform: translate3D(0px,-15px,182px) rotateX(25deg) rotateY(30deg);
+  }
+}
+
+.cubo:hover{
+  animation: Rotation 10s infinite alternate linear;
+}
+
+@keyframes Rotation{
+  from{
+    transform: translate3D(0px,-10px,180px) rotateX(25deg) rotateY(30deg);
+  }
+  10%{
+    transform: translate3D(0px,-10px,180px) rotateX(25deg) rotateY(30deg);
+  }
+
+
+  15%{
+    transform: translate3D(0px,-15px,250px) rotateX(-10deg) rotateY(60deg);
+  }
+  25%{
+    transform: translate3D(0px,-15px,250px) rotateX(-10deg) rotateY(60deg);
+  }
+
+
+  30%{
+    transform: translate3D(0px,-10px,250px) rotateX(-30deg) rotateY(-40deg);
+  }
+  40%{
+    transform: translate3D(0px,-10px,250px) rotateX(-30deg) rotateY(-40deg);
+  }
+
+
+  45%{
+    transform: translate3D(0px,-10px,250px) rotateX(25deg) rotateY(-80deg);
+  }
+  55%{
+    transform: translate3D(0px,-10px,250px) rotateX(25deg) rotateY(-80deg);
+  }
+
+  60%{
+    transform: translate3D(0px,-10px,250px) rotateX(-25deg) rotateY(-240deg);
+  }
+  70%{
+    transform: translate3D(0px,-10px,250px) rotateX(-25deg) rotateY(-240deg);
+  }
+
+  75%{
+    transform: translate3D(0px,-10px,250px) rotateX(-75deg) rotateY(-50deg);
+  }
+  85%{
+    transform: translate3D(0px,-10px,250px) rotateX(-75deg) rotateY(-50deg);
+  }
+
+  90%{
+    transform: translate3D(0px,-10px,180px) rotateX(25deg) rotateY(30deg);
+  }
+  100%{
+    transform: translate3D(0px,-10px,180px) rotateX(25deg) rotateY(30deg);
+  }
+}
+
+
+
+
+
+
+.cont-face{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  outline: 1px solid var(--gris-claro);
+  outline-style: inset;
+  border-radius: 8px;
+  background: var(--grad-bg);
+
+}
+
+.face-sideFront{
+  transform: translateZ(25px);
+  display: flex;
+}
+.face-sideRight{
+  transform: translate(-25px) rotateY(90deg);
+  width: 50px;
+}
+.face-sideLeft{
+  transform: translate(375px) rotateY(90deg);
+  width: 50px;
+}
+.face-sideBack{
+  transform: translateZ(-25px);
+  box-shadow: 0px -20px 120px var(--gris-opaco) inset;
+}
+.face-sideUp{
+  transform: translateY(-25px) rotateX(90deg);
+  height: 50px;
+}
+.face-sideBottom{
+  transform: translateY(175px) rotateX(90deg);
+  height: 50px;
+  box-shadow: -20px 20px  60px #646463d3 inset;
+}
+
+.signature{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding-top: 10%;
+  transform: scaleX(-1);
+}
+.signature::before{
+  content: "Made by: Alex Acurio";
+  margin: auto;
+  height: 8%;
+  width: 40%;
+  padding: 1%;
+  font-size: 0.6em;
+  letter-spacing: 2px;
+  color: var(--gris-oscuroSuave);
+  background: var(--gris-opaco);
+  border-radius: 200px;
+  outline: 1px solid var(--gris-neutro);
+  text-align: center;
+  opacity: 0.8;
+}
+
+
+.inner-bevel{
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  margin: auto 25%;
+  border-radius: 1px;
+  background-image: var(--grad-bg);
+  outline: var(--gris-neutro) 2px solid;
+  outline-style: inset;
+}
+.face-sideUp > .inner-bevel {
+  margin: 11% 25%;
+  height: 5px;
+}
+
+
+.divide-line{
+  outline: 1px solid var(--gris-claro);
+  outline-style: outset;
+  position: absolute;
+}
+.face-sideUp > .divide-line,
+.face-sideBottom > .divide-line{
+  border-radius: 8px 8px 0px 0px;
+  width: 100%;
+  height: 45%;
+}
+.face-sideLeft > .divide-line,
+.face-sideRight > .divide-line{
+  border-radius: 8px 0px 0px 8px;
+  width: 55%;
+  height: 100%;
+}
+.face-sideBottom > .divide-line{
+  outline: 1px solid var(--gris-opaco);
+  outline-style: outset;
+}
+
+
+
+.wire-place{
+  background: var(--gris-opaco);
+  width: 30px;
+  transform: translate3D(95px,5px,0);
+  outline: 2px solid var(--gris-neutro);
+}
+.wire-place::before{
+  content: "";
+  width: 60%;
+  background: var(--gris-oscuroFuerte);
+  margin-top: 20%;
+  margin-left: 20%;
+  display: block;
+  box-shadow: 0 0 5px ;
+}
+.wire-place, 
+.wire-place::before{
+  position: absolute;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+} 
+
+
+.panel{
+  margin: auto;
+  width: 360px;
+  height: 140px;
+  margin-top: 40px;
+  border-radius: 4px;
+  background-image: var(--grad-panel);
+  outline: var(--gris-neutro) 2px solid;
+  outline-style: inset;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 0px;
+}
+
+/** Columna 1 **/
+
+.column-1{
+  display: flex;
+}
+.cross-box{
+  margin: auto;
+  margin-bottom: 24px;
+  width: 75px;
+  display: flex;
+  aspect-ratio: 1/1;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.cross-box::before{
+  width: 100%;
+  height: 40%;
+  margin: auto;
+}
+.cross-box::after{
+  height: 100%;
+  width: 40%;
+  left: 30%;
+  position: absolute;
+}
+.cross-box::before,
+.cross-box::after{
+  content: "";
+  display: block;
+  background: var(--grad-bg);
+  border-radius: 2px;
+  outline: 4px solid var(--gris-claro);
+  outline-style: outset;
+}
+
+.center-point{
+  background: black;
+  position: absolute;
+  display: flex;
+  margin: 28px;
+  width: 25%;
+  z-index: 10;
+  
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.cross-place{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+}
+.cross-place::before,
+.cross-place::after{
+  content: "";
+  display: block;
+  border-radius: 2px;
+  background: black;
+  
+  outline: 1px solid black;
+  box-shadow: 0px 2px 8px;
+}
+.cross-place::before{
+  width: 90%;
+  height: 30%;
+  margin: auto;
+}
+.cross-place::after{
+  position: absolute;
+  height: 90%;
+  width: 30%;
+  left: 35%;
+  top: 5%;
+}
+
+
+
+
+.cross-button{
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  transform: translate3d(42px,109px,12px);
+  transform-style: preserve-3d;
+}
+.cross-buttonFace{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  display: block;
+  transform: translate3d(0px,0px,20px);
+  background: var(--gris-oscuroFuerte);
+}
+.cross-button div:nth-child(1){ /** face **/
+  width: 32px;
+  transform-origin: left;
+  transform: translate3d(5px,0px,20px) rotateY(10deg);
+  outline: 2px solid var(--gris-oscuroSuave);
+  outline-style: outset;
+}
+.cross-button div:nth-child(2){
+  transform: translate3d(-5px,0px,10px) rotateY(90deg);
+}
+.cross-button div:nth-child(3){
+  transform: translate3d(30px,0px,8px) rotateY(90deg);
+  width: 12px;
+}
+.cross-button div:nth-child(4){
+  width: 32px;
+  transform: translate3d(5px,10px,11px) rotateX(90deg);
+  clip-path: polygon(100% 0, 100% 65%, 0% 90%, 0 0%);
+}
+.cross-button div:nth-child(5){
+  width: 32px;
+  transform: translate3d(5px,-11px,11px) rotateX(90deg);
+  clip-path: polygon(100% 0, 100% 65%, 0% 90%, 0 0%);
+}
+
+.cubo > .button-left{
+  transform: translate3d(44px,109px,12px);
+}
+.cubo > .button-top{
+  transform: translate3d(66px,87px,12px) rotateZ(90deg);
+}
+.cubo > .button-right{
+  transform: translate3d(88px,109px,12px) rotateZ(180deg);
+}
+.cubo > .button-bottom{
+  transform: translate3d(66px,130px,12px) rotateZ(270deg);
+}
+
+.arrow{
+  background: var(--grad-panel);
+  height: 18px;
+  left: -6px;
+  position: absolute;
+  clip-path: polygon(40% 0%, 40% 20%, 60% 20%, 60% 80%, 40% 80%, 40% 100%, 10% 50%);
+}
+
+
+.cross-center{
+  margin: 28px;
+  width: 15px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate3D(45px,83px,28px);
+  background-image:radial-gradient(at 70% 70%,gray 1%,black 40%);
+  outline: 1px solid var(--gris-oscuroSuave);
+  outline-style: inset;
+}
+
+
+.plug-wire{
+  transform-style: preserve-3d;
+  position: absolute;
+  transform: translate3d(103px,-60px,-5px);
+  
+}
+.plug-wireFace,
+.plug-wireDiameter{
+  width: 14px;
+  height: 90px;
+  border-radius: 40px;
+  position: absolute;
+  background: var(--gris-oscuroFuerte);
+  transform-origin: bottom;
+
+}
+
+.plug-wireDiameter,
+.plug-wireDiameter::before{
+  width: 13px;
+  height: 13px;
+}
+.plug-wireDiameter{
+  transform: translate3d(0px,-8px,8px) rotateX(90deg);
+  transform-style: preserve-3d ;
+  background: var(--gris-oscuroFuerte);
+  display: none;
+}
+
+
+.plug-wire > div:nth-child(1){
+  transform: translate3d(0px,0px,0px) rotateY(0deg);
+}
+.plug-wire > div:nth-child(2){
+  transform: translate3d(0px,0px,0px) rotateY(22.5deg);
+}
+.plug-wire > div:nth-child(3){
+  transform: translate3d(0px,0px,0px) rotateY(45deg);
+}
+.plug-wire > div:nth-child(4){
+  transform: translate3d(0px,0px,0px) rotateY(67.5deg);
+}
+.plug-wire > div:nth-child(5){
+  transform: translate3d(0px,0px,0px) rotateY(90deg);
+}
+.plug-wire > div:nth-child(6){
+  transform: translate3d(0px,0px,0px) rotateY(112.5deg);
+}
+.plug-wire > div:nth-child(7){
+  transform: translate3d(0px,0px,0px) rotateY(135deg);
+}
+.plug-wire > div:nth-child(8){
+  transform: translate3d(0px,0px,0px) rotateY(157.5deg);
+}
+
+.plug-wire > div{
+  background: linear-gradient(transparent 15%, var(--gris-oscuroFuerte) 90%);
+}
+
+
+
+
+/** Columna 2 **/
+
+.column-2{
+  position: relative;
+}
+
+.bar{
+  background: var(--gris-bar);
+  width: 100%;
+  height: 22px;
+  border-radius: 8px;
+}
+.bar-1{
+  margin-top: -4px;
+}
+.bar-1,
+.bar-2,
+.bar-3{
+  margin-bottom: 6px;
+}
+.bar-3{
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+.bar-3::before{
+  content: "select start";
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  margin: auto;
+  letter-spacing: 1px;
+  font-weight: 800;
+  color: var(--red-color);
+}
+.bar-4{
+  position: absolute;
+  bottom: -4px;
+}
+
+
+.cont-buttons{
+  width: 100%;
+  height: 35px;
+  border-radius: 3px;
+  outline-offset: -5px;
+  display: flex;
+  position: relative;
+  background: var(--grad-buttons);
+  outline: 4px solid var(--whiteGray-color);
+  outline-style: inset;
+}
+
+
+.select-buttonFace{
+  border-radius: 1px;
+  background: var(--gris-oscuroFuerte);
+}
+
+.select-button{
+  width: 32px;
+  height: 10px;
+  margin: auto;
+  display: flex;
+  position: relative;
+  background: var(--gris-oscuroFuerte);
+  transform-style: preserve-3d;
+  
+  border-radius: 4px;
+  outline: 3px solid black;
+  box-shadow: 0px 2px 8px;
+}
+
+.cubo > .select-button{
+  transform: translate3d(-30px, 143px, 25px) ;
+}
+.cubo > .first{
+   transform: translate3d(30px, 153px, 25px) ;
+}
+
+.cubo > .select-button > .sideF{
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  transform: translateY(-5px) rotateX(90deg);
+}
+.cubo > .select-button > .sideR{
+  width: 10px;
+  height: inherit;
+  position: absolute;
+  transform: translateX(27px) rotateY(90deg);
+}
+
+.cubo > .select-button > .sideL{
+  width: 10px;
+  height: inherit;
+  position: absolute;
+  transform: translate(-5px) rotateY(90deg);
+}
+.cubo > .select-button > .sideBt{
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  transform: translateY(5px) rotateX(90deg);
+}
+.cubo > .select-button > .sideT{
+  background: var(--grad-panel);
+  transform: translateZ(5px);
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  border-radius: 4px;
+  outline: 1px solid var(--gris-opaco);
+  outline-style: outset;
+}
+
+
+
+
+/** Columna 3 **/
+
+.column-3{
+position: relative;
+}
+.brand{
+  width: auto;
+  height: 50%;
+  display: flex;
+  position: relative;
+}
+.brand::before,
+.placeButton-B::before,
+.placeButton-A::before{
+  content: "Nintendo";
+  margin: auto;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  font-weight: 800;
+  color: var(--red-color);
+}
+.placeButtons{
+  width: auto;
+  height: 50%;
+  display: flex;
+  position: relative;
+}
+.placeButtons > div{
+  display: flex;
+  margin-top: 8px;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  outline: 1px solid #fff;
+  outline-style: outset;
+  background: var(--gris-neutro);
+  position: relative;
+}
+.placeButton-B::before{
+  content: "B";
+  position: absolute;
+  bottom: -20px;
+  right: 0px;
+}
+.placeButton-B::after,
+.placeButton-A::after{
+  content: "";
+  background: var(--red-darkColor);
+  position: relative;
+  margin: auto;
+  width: var(--placeButtons-Size);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  outline: 3px solid black;
+  box-shadow: 0px 2px 8px;
+}
+.placeButton-A::before{
+  content: "A";
+  position: absolute;
+  bottom: -20px;
+  right: 0px;
+}
+
+
+/** Boton A - B **/
+
+.playButton{
+  background: transparent;
+  width: var(--placeButtons-Size);
+  aspect-ratio: 1/1;
+  position: absolute;
+  display: flex;
+  transform: translate3D(287px, 143px, 26px) rotateY(0deg);
+  transform-style: preserve-3d;
+}
+
+.button-A{
+  transform: translate3D(337px, 143px, 26px) rotateY(0deg);
+}
+
+.playButton div{
+  width: 10px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  background: var(--red-darkColor);
+}
+
+.playButton  div:first-child{
+  transform:  translateY(5px) rotateX(90deg) rotateY(0deg);
+}
+.playButton  div:nth-child(2){
+  transform: translateY(2.5px) translateX(9px) rotateZ(-36deg) rotateX(90deg);
+}
+.playButton  div:nth-child(3){
+  transform: translateX(14.5px) translateY(-5px) rotateZ(-72deg) rotateX(90deg);
+}
+.playButton  div:nth-child(4){
+  transform: translateX(14.5px) translateY(-14.5px) rotateZ(-108deg)
+  rotateX(90deg);
+}
+.playButton  div:nth-child(5){
+  transform: translateX(9px) translateY(-22px) rotateZ(-144deg) rotateX(90deg);
+}
+.playButton  div:nth-child(6){
+  transform: translateY(-25px) rotateX(90deg);
+}
+.playButton  div:nth-child(7){
+  transform: translateX(-9px) translateY(-22px) rotateZ(-36deg) rotateX(90deg);
+}
+.playButton  div:nth-child(8){
+  transform: translateX(-14.5px) translateY(-14.5px) rotateZ(-72deg) rotateX(90deg);
+}
+.playButton  div:nth-child(9){
+  transform: translateX(-14.5px) translateY(-5px) rotateZ(-108deg) rotateX(90deg);
+}
+.playButton  div:nth-child(10){
+  transform: translateX(-9px) translateY(2.5px) rotateZ(-144deg) rotateX(90deg);
+}
+.playButton  div:nth-child(11),
+.playButton  div:nth-child(12){
+  background: var(--red-darkColor);
+  width: calc(var(--placeButtons-Size) + 2px);
+  transform: translate3d(-10px,-20px,0px);
+  border-radius: 50%;
+}
+.playButton  div:nth-child(12){
+  background-image: linear-gradient(135deg,
+  var(--red-darkColor),var(--red-color));
+  transform: translate3d(-10px,-20px,5px);
+  outline: var(--red-lightColor) 2px solid;
+  outline-style: outset;
+  transform-style: preserve-3d;
+}
+.playButton  div:nth-child(12)::before{
+  content: "";
+  display: block;
+  aspect-ratio: 1/1;
+  transform: scale(0.8);
+  border-radius: 50%;
+  background-image: conic-gradient( from 180deg,transparent 50%,
+   var(--red-lightColor)120%);
+}
+.playButton  div:nth-child(12)::after{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 6px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: var(--red-color);
+  opacity: 0.5;
+  transform: translate3d(11px, -17px, 0px);
+}
+
+
+
+
+
+
